@@ -13,19 +13,22 @@ class SendMessage implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    protected SmsProvider $provider;
+
     /**
      * Create a new job instance.
      */
-    public function __construct(protected SmsProvider $provider, protected $phone, protected $message)
+    public function __construct(protected $phone, protected $message)
     {
-        //
     }
 
     /**
-     * Execute the job.
+     * @param SmsProvider $provider
+     * @return void
      */
-    public function handle(): void
+    public function handle(SmsProvider $provider): void
     {
+        $this->provider = $provider;
         $this->provider->sendMessage($this->phone, $this->message);
     }
 }

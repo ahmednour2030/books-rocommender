@@ -8,10 +8,6 @@ use App\Models\User;
 
 class SmsObserver
 {
-    public function __construct(protected SmsProvider $smsService)
-    {
-    }
-
     /**
      * @param $model
      * @return void
@@ -24,6 +20,6 @@ class SmsObserver
 
         $message =  "Thank you $user->name";
 
-        SendMessage::dispatch(provider: $this->smsService, phone:$user->phone, message:$message);
+        SendMessage::dispatch(phone:$user->phone, message:$message);
     }
 }
