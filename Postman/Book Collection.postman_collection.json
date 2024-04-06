@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "1532869e-ca0f-4623-b7ce-a6762c9f4791",
+		"name": "Book Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9727640",
+		"_collection_link": "https://martian-spaceship-168955.postman.co/workspace/Supper-App~ea6258a5-b896-458e-a5e8-00443f072c2f/collection/9727640-1532869e-ca0f-4623-b7ce-a6762c9f4791?action=share&source=collection_link&creator=9727640"
+	},
+	"item": [
+		{
+			"name": "Get Books Recommended",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/books/recommended",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books",
+						"recommended"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Store Reading",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\": 3,\r\n    \"book_id\": 2,\r\n    \"start_page\": 1,\r\n    \"end_page\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/books/reading",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"books",
+						"reading"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
